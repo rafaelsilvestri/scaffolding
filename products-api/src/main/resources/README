@@ -1,1 +1,4 @@
 Use VM Options -Dspring.profiles.active=[ci|demo|prod] on tomcat startup
+
+# Persistence
+Change persistence-*.properties files to correct database configuration.

@@ -13,7 +13,7 @@ import javax.inject.Named;
 public class HelloSpeaker {
     
     public String sayHello() {
-        return "Hello World modified!";
+        return "Hello World.";
     }
     
     @PostConstruct

@@ -1,10 +1,10 @@
-Utilizar profiles e arquivo properties.
-Qual LOGGER utilizar
+Qual LOGGER utilizar?
 reduzir jars mantendo apenas o necessário
 Transação / commit / rollback ?
 BeanValidation
 Teste unitário spring data
 Analisar a configuração de data source e ver se funciona como pool de conexões como no wildfly
+
 
 
 Anotações:
