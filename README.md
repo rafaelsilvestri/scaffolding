@@ -1,2 +1,2 @@
 # seed
-A repository for the seed projects
+seed projects on github
