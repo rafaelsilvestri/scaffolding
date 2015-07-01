@@ -1,21 +1,28 @@
-Entender: Transação / commit / rollback ?
-Melhorar configuração do log4j.
-Reduzir jars mantendo apenas o necessário
-BeanValidation
-Teste unitário spring data / jersey
-Analisar a configuração de data source e ver se funciona como pool de conexões como no wildfly
-Documentar boas praticas (uso de JSR)
-Criar aplicação frontend com Angular e Bootstrap
+Issues:
+    Criar implementações e exemplos de query.
+    Reduzir jars mantendo apenas o necessário
+    BeanValidation
+    Teste unitário spring data / jersey
+    Analisar a configuração de data source e ver se funciona como pool de conexões como no wildfly
+    Criar aplicação frontend com Angular e Bootstrap
+    Migrar do maven para o gradle
+    Criar segundo projeto e comunicar via AMQP (RabbitMQ)
+    Adicionar swangar para documentação da API
+    Internacionalização
+    Criar archetypes para service-api
+    Definir a melhor forma de organização do codigo em packages
 
-
-Anotações:
-	Utilizar anotações baseadas em JSRs diminui o acoplamento com o spring. Uma alternativa ao uso de xml
-		@Named ao invés de @Component ?
-		@Inject é preferível ao de @Autowired
-		@PostConstruct e @PreDestroy
-		
 
 ----------
+Padrões:
+    Utilizar anotações baseadas em JSRs diminui o acoplamento com o spring. Ex.: @Inject, @PostConstruct, etc.
+    
+
+Spring Data JPA:
+    Atributos de transação devem ser anotados nos serviços e não no DAO. 
+    É necessário que os serviços sejam anotados com @Service para que o controle transacional possa funcionar.
+    Em exceções de "não checadas" é executado o rollback da transação. Em exceções "checadas" por padrão não é executado o rollback.
+    Documentação: http://docs.spring.io/spring-data/jpa/docs/1.8.1.RELEASE/reference/html/
 
 
 ----------
@@ -27,3 +34,12 @@ Links:
 
     Plugin para teste de REST no Chrome
         Advanced REST client
+
+-------
+Spring 4.x
+Tomcat 7.x
+Log4J 1.2.17
+   Java EE
+        JPA
+        Beans Validation
+        CDI (analizar integração com Spring DI)
