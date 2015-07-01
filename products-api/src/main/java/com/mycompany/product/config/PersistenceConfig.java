@@ -5,6 +5,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -27,14 +28,17 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableJpaRepositories(basePackages = {"com.mycompany.product.dao"})
 @EnableTransactionManagement
-@PropertySource({ "classpath:persistence-${spring.profiles.active:ci}.properties" })
+@PropertySource({"classpath:persistence-${spring.profiles.active:ci}.properties"})
 public class PersistenceConfig {
-    
+
+    private static final Logger LOGGER = Logger.getLogger(PersistenceConfig.class);
+
     @Inject
     private Environment env;
-    
+
     @PostConstruct
     public void init() {
+        LOGGER.info("Initializing PersistenceConfig");
     }
 
     @Bean

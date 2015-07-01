@@ -1,10 +1,11 @@
-Qual LOGGER utilizar?
-reduzir jars mantendo apenas o necessário
-Transação / commit / rollback ?
+Entender: Transação / commit / rollback ?
+Melhorar configuração do log4j.
+Reduzir jars mantendo apenas o necessário
 BeanValidation
-Teste unitário spring data
+Teste unitário spring data / jersey
 Analisar a configuração de data source e ver se funciona como pool de conexões como no wildfly
-
+Documentar boas praticas (uso de JSR)
+Criar aplicação frontend com Angular e Bootstrap
 
 
 Anotações:
@@ -23,4 +24,6 @@ Links:
 	http://www.itexto.net/guias/di_spring3_v00.pdf
     Trabalhando com profiles
 	http://maciejwalkowiak.pl/blog/2012/03/27/spring-3-1-profiles-and-tomcat-configuration/
-	
+
+    Plugin para teste de REST no Chrome
+        Advanced REST client
