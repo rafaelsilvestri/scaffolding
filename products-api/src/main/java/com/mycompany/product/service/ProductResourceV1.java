@@ -67,6 +67,7 @@ public class ProductResourceV1 {
     /**
      * delete
      *
+     * @param name
      * @param id
      * @return
      */

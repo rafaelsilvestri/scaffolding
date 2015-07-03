@@ -1,29 +1,40 @@
 Issues:
     Criar implementações e exemplos de query.
-    Reduzir jars mantendo apenas o necessário
-    BeanValidation
-    Teste unitário spring data / jersey
-    Analisar a configuração de data source e ver se funciona como pool de conexões como no wildfly
-    Criar aplicação frontend com Angular e Bootstrap
-    Migrar do maven para o gradle
-    Criar segundo projeto e comunicar via AMQP (RabbitMQ)
-    Adicionar swangar para documentação da API
+    Queries em xml
+    Auditoria de entidades (createdBy, createdDate)
     Internacionalização
+    Migrar do maven para o gradle
+    Reduzir jars mantendo apenas o necessário
+    Analisar a configuração de data source e ver se funciona como pool de conexões como no wildfly
+    Teste unitário spring data / jersey
+    Melhores praticas para criação de equals e hashcode (netbeans template?)
+    Criar segundo projeto e comunicar via AMQP (RabbitMQ)
+    
     Criar archetypes para service-api
-    Definir a melhor forma de organização do codigo em packages
+    Criar aplicação frontend com Angular e Bootstrap
 
+    Adicionar documentação da API através do swagger (http://swagger.io/)
+        Estudar o uso e ferramentas de geração e consulta dos serviços
+    
 
-----------
+-------------------
 Padrões:
     Utilizar anotações baseadas em JSRs diminui o acoplamento com o spring. Ex.: @Inject, @PostConstruct, etc.
-    
+    Packages: <company>.<project>.<module>.[component] 
+        Ex.: com.mycompany.core.jpa | com.mycompany.product | com.mycompany.product.stock
+        (domain | repository | service) ou (entity | boundary | control | dao) ?
 
 Spring Data JPA:
     Atributos de transação devem ser anotados nos serviços e não no DAO. 
     É necessário que os serviços sejam anotados com @Service para que o controle transacional possa funcionar.
     Em exceções de "não checadas" é executado o rollback da transação. Em exceções "checadas" por padrão não é executado o rollback.
     Documentação: http://docs.spring.io/spring-data/jpa/docs/1.8.1.RELEASE/reference/html/
+    Na implementação de equals e hashcode nas entidades, sempre utilizar getters pois alguns campos podem ser lazy ou proxy
 
+Beans Validation
+    Pode ser utilizado uma customização do Jersey para enviar informações do erro para o cliente. Para isto
+    é necessário setar a propriedade property(ServerProperties.BV_SEND_ERROR_IN_RESPONSE, true) na classe de
+    configuração dos recursos (ApplicationConfig)
 
 ----------
 Links:
@@ -39,7 +50,8 @@ Links:
 Spring 4.x
 Tomcat 7.x
 Log4J 1.2.17
-   Java EE
-        JPA
-        Beans Validation
-        CDI (analizar integração com Spring DI)
+Hibernate 4.3.x
+Java EE 7
+    JPA
+    Beans Validation
+    CDI (analizar integração com Spring DI)

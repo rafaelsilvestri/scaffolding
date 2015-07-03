@@ -28,9 +28,9 @@ public class ApplicationConfig extends Application {
      * out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(com.mycompany.product.config.ValidationExceptionMapper.class);
         resources.add(com.mycompany.product.service.ProductResourceV1.class);
-        //resources.add(org.glassfish.jersey.server.validation.internal.ValidationErrorMessageBodyWriter.class);
+        resources.add(org.glassfish.jersey.server.validation.internal.ValidationErrorMessageBodyWriter.class);
+        resources.add(org.glassfish.jersey.server.wadl.internal.WadlResource.class);
     }
-
+    
 }
