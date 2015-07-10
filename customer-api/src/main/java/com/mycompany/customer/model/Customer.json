@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Rafael",
+        "address": {
+            "address": "Rua xxx",
+            "number": "490",
+            "complement": "Prox. ao corpo de bombeiros",
+            "neighborhood": "Centro",
+            "city": "Criciuma",
+            "state": "SC",
+            "country": "Brasil",
+            "zipCode": "88802-070"
+        }
+    },
+    {
+        "name": "José da Silva",
+        "address": {
+            "address": "Rua xxx",
+            "number": "490",
+            "complement": "Prox. ao corpo de bombeiros",
+            "neighborhood": "Centro",
+            "city": "Criciuma",
+            "state": "SC",
+            "country": "Brasil",
+            "zipCode": "88802-070"
+        }
+    },
+    {
+        "name": "João da Silva",
+        "address": {
+            "address": "Rua xxx",
+            "number": "490",
+            "complement": "Prox. ao corpo de bombeiros",
+            "neighborhood": "Centro",
+            "city": "Criciuma",
+            "state": "SC",
+            "country": "Brasil",
+            "zipCode": "88802-070"
+        }
+    }
+]
