@@ -23,12 +23,11 @@ public class Category implements Serializable {
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date createdDate;
 
-    @Column(name = "LAST_MODIFIED_DATE", insertable = true, updatable = false)
+    @Column(name = "LAST_MODIFIED_DATE", insertable = false, updatable = true)
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date lastModifiedData;
 
-    @Column(name = "NAME", nullable = false, length = 20)
-    @Max(20)
+    @Column(name = "NAME", nullable = false)
     private String name;
 
     @Column(name = "ACTIVE", nullable = false)

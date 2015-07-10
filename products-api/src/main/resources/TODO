@@ -1,21 +1,24 @@
-Issues:
-    Criar implementações e exemplos de query.
-    Queries em xml
-    Auditoria de entidades (createdBy, createdDate)
-    Internacionalização
+TODO:
+    Teste unitário spring data / jersey
+    Criar segundo projeto e comunicar via AMQP (RabbitMQ)
     Migrar do maven para o gradle
     Reduzir jars mantendo apenas o necessário
-    Analisar a configuração de data source e ver se funciona como pool de conexões como no wildfly
-    Teste unitário spring data / jersey
+    Criar implementações e exemplos de query com spring JPA. Queries em arquivos xml.
+    Auditoria de entidades (createdBy, createdDate)
+    Internacionalização
     Melhores praticas para criação de equals e hashcode (netbeans template?)
-    Criar segundo projeto e comunicar via AMQP (RabbitMQ)
-    
     Criar archetypes para service-api
     Criar aplicação frontend com Angular e Bootstrap
-
     Adicionar documentação da API através do swagger (http://swagger.io/)
         Estudar o uso e ferramentas de geração e consulta dos serviços
-    
+    Estudar conceitos do Git e quais padrões utilizar (branch/tags)
+    Estudar padrões de banco de dados (nome de tabela, coluna, arquivo de script, etc)
+    Cada app é deployada em um unico tomcat?
+    Melhorar o controle de profiles CI | DEMO | QAD | PROD
+
+----
+    Melhor forma de configurar o datasource/pool de conexoes com tomcat e spring?
+    Forma de deploy nos ambientes especificos CI | DEMO | QAD | PROD
 
 -------------------
 Padrões:
@@ -46,12 +49,14 @@ Links:
     Plugin para teste de REST no Chrome
         Advanced REST client
 
--------
-Spring 4.x
-Tomcat 7.x
-Log4J 1.2.17
-Hibernate 4.3.x
-Java EE 7
-    JPA
-    Beans Validation
-    CDI (analizar integração com Spring DI)
+
+---------------
+Tecnology Stack:
+    Spring 4.x
+    Tomcat 7.x
+    Log4J 1.2.17
+    Hibernate 4.3.x
+    Java EE 7
+        JPA
+        Beans Validation
+        CDI (analizar integração com Spring DI)

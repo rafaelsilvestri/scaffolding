@@ -9,20 +9,17 @@ import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import org.springframework.stereotype.Service;
 
 /**
  * REST Web Service
  *
  * @author Rafael Cechinel Silvestri
  */
-@Service
+//@Service
 @Path("/v1/products")
 @Produces(MediaType.APPLICATION_JSON) //utf-8
 public class ProductResourceV1 {
 
-    @Inject
-    HelloSpeaker helloService;
     @Inject
     ProductDAO productDAO;
 

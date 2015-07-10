@@ -22,11 +22,11 @@ public class Product implements Serializable {
     private Long id;
 
     @Column(name = "CREATE_DATE", nullable = false, insertable = true, updatable = false)
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
 
-    @Column(name = "LAST_MODIFIED_DATE", insertable = true, updatable = false)
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    @Column(name = "LAST_MODIFIED_DATE", insertable = false, updatable = true)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date lastModifiedData;
 
     @Column(nullable = false)
@@ -41,9 +41,9 @@ public class Product implements Serializable {
     @Column(name = "ACTIVE", nullable = false)
     private boolean active;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "CATEGORY_ID")
-    private Category category; // como vai ser o join column?
+    private Category category;
 
     public Product() {
         this.amount = BigDecimal.ZERO;

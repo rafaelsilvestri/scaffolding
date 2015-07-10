@@ -12,6 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.jpa.repository.config.JpaRepositoryConfigExtension;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -29,7 +30,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = {"com.mycompany.product.dao"})
 @EnableTransactionManagement
 @PropertySource({"classpath:persistence-${spring.profiles.active:ci}.properties"})
-public class PersistenceConfig {
+public class PersistenceConfig extends JpaRepositoryConfigExtension {
 
     private static final Logger LOGGER = Logger.getLogger(PersistenceConfig.class);
 
