@@ -41,7 +41,7 @@ public class Product implements Serializable {
     @Column(name = "ACTIVE", nullable = false)
     private boolean active;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "CATEGORY_ID")
     private Category category;
 

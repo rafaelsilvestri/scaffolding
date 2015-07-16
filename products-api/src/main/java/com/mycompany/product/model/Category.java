@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Objects;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -12,6 +13,7 @@ import javax.validation.constraints.Max;
  */
 @Entity
 @Table(name = "CATEGORY", schema = "PUBLIC")
+@XmlRootElement
 public class Category implements Serializable {
 
     @Id

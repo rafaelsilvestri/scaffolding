@@ -5,7 +5,6 @@ import com.mycompany.product.model.Product;
 import java.util.List;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -43,9 +42,9 @@ public class ProductResourceV1 {
     @Transactional
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response post(@Valid Product product) {
-        productDAO.save(product);
-        return Response.ok().build();
+    public Product post(Product product) {
+        product = productDAO.save(product);
+        return productDAO.findOne(product.getId());
     }
 
     /**
@@ -55,10 +54,11 @@ public class ProductResourceV1 {
      * @return
      */
     @PUT
+    @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response put(Product product) {
-        productDAO.save(product);
-        return Response.ok().build();
+    public Product put(Product product) {
+        product = productDAO.save(product);
+        return productDAO.findOne(product.getId());
     }
 
     /**
@@ -76,16 +76,16 @@ public class ProductResourceV1 {
     }*/
     @Transactional
     @DELETE
-    @Path("/{name}")
-    public void delete(@PathParam("name") String name) {
-        System.out.println("delete by name: " + name);
-        productDAO.deleteByName(name);
+    @Path("/{id}")
+    public Response delete(@PathParam("id") Long id) {
+        productDAO.delete(id);
+        return Response.ok().build();
     }
     
     @GET
-    @Path("/{name}")
-    public List<Product> findByName(@PathParam("name") String name) {
-        return productDAO.findByName(name);
+    @Path("/{id}")
+    public Product findbyId(@PathParam("id") Long id) {
+        return productDAO.findOne(id);
     }
 
 }
