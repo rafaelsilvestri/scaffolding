@@ -1,0 +1,25 @@
+<form name="productForm" ng-submit="saveProduct()" novalidate>
+    <input type="hidden" class="form-control" id="product_id" ng-model="product.id">
+    <div class="form-group">
+        <label class="control-label" for="product_name">Name</label>
+        <input class="form-control" id="product_name" ng-model="product.name">
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="product_price">Price</label>
+        <input class="form-control" id="product_price" type="number" ng-model="product.amount">
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="product_description">Description</label>
+        <input class="form-control" id="product_description" ng-model="product.description">
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="product_category">Category</label>
+        <select id="product_category" class="form-control" 
+                ng-model="product.category" 
+                ng-options="category.name for category in categories track by category.id">
+            <option value="">Select a category</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="button" ng-click="cancel()" class="btn btn-primary">Cancel</button>
+</form>
